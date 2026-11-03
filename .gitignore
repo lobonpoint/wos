@@ -24,3 +24,15 @@ __pycache__/
 .DS_Store
 # Allow one explicitly synthetic example email in the public template
 !/examples/demo-request.eml
+
+# Email processing folders: track directory placeholders only
+/email/intake/**
+!/email/intake/.gitkeep
+/email/processed/**
+!/email/processed/.gitkeep
+/email/failed/**
+!/email/failed/.gitkeep
+/email/drafts/**
+!/email/drafts/.gitkeep
+/email/reports/**
+!/email/reports/.gitkeep

@@ -1,6 +1,6 @@
 # WOS — Work Chief of Staff (MVP)
 
-A **public-safe, local-first template** for a GitHub Copilot-powered Work Operating System. Five Copilot skills and a Python/SQLite CLI connect dated project folders, approved local email exports, a work registry, executive briefs, and candidate Second Brain knowledge.
+A **public-safe, local-first template** for a GitHub Copilot-powered Work Operating System. Six Copilot skills and a Python/SQLite CLI connect dated project folders, approved local email exports, a work registry, executive briefs, and candidate Second Brain knowledge.
 
 **This is an MVP, not a fully autonomous agent or a certified bank-compliant product.** It never connects to Outlook, sends email, accesses Graph/Power Automate, or uploads anything. Its email classification is a reviewable keyword heuristic, **not** an LLM inference engine. Copilot performs richer reasoning when you invoke the skills in an authorized workspace.
 
@@ -18,7 +18,10 @@ A **public-safe, local-first template** for a GitHub Copilot-powered Work Operat
 python -m wos init
 python -m wos project-new "Synthetic API security review" --objective "Demo a decision package"
 python -m wos action-add "Evaluate authentication options"
+# Either import explicitly:
 python -m wos email-import examples/demo-request.eml
+# Or copy approved exports into email/intake/ and process the batch:
+python -m wos email-process
 python -m wos list project_proposals
 python -m wos list actions
 python -m wos brief
@@ -103,3 +106,7 @@ python -m wos convert "path/to/page.html" --output "runtime/converted/page.md"
 ```
 
 PDF requires `PyMuPDF`, which must be approved before installation: `python -m pip install pymupdf`. For Office documents, only modern `.docx`, `.pptx`, `.xlsx` formats are supported; convert legacy `.doc`, `.ppt`, `.xls` using approved workplace tooling first. Long output is **explicitly truncated** at 40,000 characters by default and prints warnings: use `--max-chars` when you need comprehensive coverage. Spreadsheet extraction limits rows/columns and reads stored values and formula text only. Converted Markdown is derived workplace data and must **not** be published in the public repo.
+
+## Email intake directories (v0.3)
+
+The repository now **includes visible, tracked placeholders** under `email/intake/`, `email/processed/`, `email/failed/`, `email/drafts/`, and `email/reports/`. See [`email/README.md`](email/README.md) for exact workflow. All non-placeholder files in those directories are gitignored. Run `python -m wos email-process` to ingest approved exports from `email/intake/` and archive them into `email/processed/` or `email/failed/`. The command writes a JSON summary, creates reviewable action/project proposals in SQLite, and does not connect to Outlook or send messages.
