@@ -1,0 +1,26 @@
+# IMPORTANT: do not commit workplace data into public repositories
+/runtime/
+/projects/
+/private/
+/knowledge/private/
+*.eml
+*.msg
+*.pst
+*.ost
+*.mbox
+*.pdf
+*.pptx
+*.xlsx
+*.docx
+*.html
+.env
+.env.*
+*.key
+*.pem
+__pycache__/
+.pytest_cache/
+.venv/
+*.py[cod]
+.DS_Store
+# Allow one explicitly synthetic example email in the public template
+!/examples/demo-request.eml
