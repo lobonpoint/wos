@@ -1,0 +1,6 @@
+# Example only; no credentials or private business data
+workspace_name: WOS Chief of Staff
+email_import: manual_approved_exports_only
+external_actions: disabled
+human_approval_required: true
+brief: daily

@@ -1,0 +1,11 @@
+From: Example Colleague <colleague@example.invalid>
+To: Demo User <user@example.invalid>
+Subject: Request: API security review for demo integration
+Date: Mon, 02 Nov 2026 10:00:00 -0500
+Message-ID: <demo-request-001@example.invalid>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hi, could you please review the proposed API authentication design and
+prepare an assessment for our fictional demonstration project?
+This is synthetic sample data, not a real workplace email.
